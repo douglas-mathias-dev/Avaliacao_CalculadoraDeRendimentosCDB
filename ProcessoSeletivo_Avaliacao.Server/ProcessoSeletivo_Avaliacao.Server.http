@@ -1,0 +1,6 @@
+@ProcessoSeletivo_Avaliacao.Server_HostAddress = http://localhost:5139
+
+GET {{ProcessoSeletivo_Avaliacao.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
