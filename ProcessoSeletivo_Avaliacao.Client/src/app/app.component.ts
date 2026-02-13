@@ -19,16 +19,16 @@ import { LOCALE_ID } from '@angular/core';
 export class AppComponent {
   private apiUrl = 'https://localhost:7024/CalcularRetornoCDB';
   title = 'processoseletivo_avaliacao.client';
-  valInicial: number = 100;
-  prazoMaximo: number = 12;
+  valInicial: number = 0.01;
+  prazoMaximo: number = 2;
   retornoBruto?: number;
   retornoLiquido?: number;
 
+  errorMessage: string | null = null;
   constructor(private http: HttpClient) { }
 
   Calcular(form: NgForm) {
-    console.log(this.valInicial, this.prazoMaximo);
-    var url: string = `${this.apiUrl}?valorInicial=${this.valInicial}&prazo=${this.prazoMaximo}`;
+    this.errorMessage = null;
 
     const params = {
       valorInicial: this.valInicial,
@@ -43,11 +43,15 @@ export class AppComponent {
           this.retornoLiquido = response.retornoLiquido;
         },
         error: (err) => {
-          console.error('Erro na API:', err);
+          const detail = err?.error?.detail;
+          this.errorMessage = detail ? `${detail}` : 'Erro desconhecido ao chamar a API.';
         }
       });
   }
 
+  dismissError() {
+    this.errorMessage = null;
+  }
 }
 interface ResultadoCdb {
   retornoBruto: number;

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using ProcessoSeletivo_Avaliacao.Server.Model;
+using ProcessoSeletivo_Avaliacao.Server.Models;
+using ProcessoSeletivo_Avaliacao.Server.Services;
 
 namespace ProcessoSeletivo_Avaliacao.Server.Controllers
 {
@@ -7,17 +8,25 @@ namespace ProcessoSeletivo_Avaliacao.Server.Controllers
     [Route("CalcularRetornoCDB")]
     public class InvestimentoController : ControllerBase
     {
-       private readonly ILogger<InvestimentoController> _logger;
-
-        public InvestimentoController(ILogger<InvestimentoController> logger)
-        {
-            _logger = logger;
-        }
-
         [HttpGet]
-        public Investimento Get(double valorInicial, int prazo)
+        public ActionResult<Investimento> Get(double valorInicial, int prazo)
         {
-            return new Investimento(valorInicial, prazo);
+            InvestimentoService investimentoService = new InvestimentoService
+            (
+                new Investimento()
+                {
+                    ValorInicial = valorInicial
+                    , Prazo = prazo 
+                }
+            );
+
+            ProblemDetails erro = investimentoService.ValidarEntrada();
+            if (!string.IsNullOrEmpty(erro.Detail))
+            {
+                return BadRequest(erro);
+            }
+            
+            return Ok(investimentoService.CalcularRetorno());
         }
     }
 }

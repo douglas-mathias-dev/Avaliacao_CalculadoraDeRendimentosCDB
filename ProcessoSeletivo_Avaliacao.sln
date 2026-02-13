@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivo_Avaliacao.
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ProcessoSeletivo_Avaliacao.Client", "processoseletivo_avaliacao.client\ProcessoSeletivo_Avaliacao.Client.esproj", "{E79EB121-81B7-1132-7D99-D47BEDD15B5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivo_Avaliacao.Tests", "ProcessoSeletivo_Avaliacao.Tests\ProcessoSeletivo_Avaliacao.Tests.csproj", "{7D8EE101-FF4A-40B6-89AD-9F3ABDA78B60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{E79EB121-81B7-1132-7D99-D47BEDD15B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E79EB121-81B7-1132-7D99-D47BEDD15B5F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E79EB121-81B7-1132-7D99-D47BEDD15B5F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7D8EE101-FF4A-40B6-89AD-9F3ABDA78B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8EE101-FF4A-40B6-89AD-9F3ABDA78B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8EE101-FF4A-40B6-89AD-9F3ABDA78B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8EE101-FF4A-40B6-89AD-9F3ABDA78B60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

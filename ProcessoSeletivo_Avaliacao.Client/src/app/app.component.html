@@ -5,14 +5,13 @@
         <h4 class="text-center mb-4">Avaliação - Calculadora de rendimentos de CDB</h4>
         <form #form="ngForm" ngNativeValidate (ngSubmit)="Calcular(form)">
           <div class="mb-3">
-            <label for="valorInicial"
+            <label for="valor"
                    class="form-label">Valor Inicial (R$)</label>
-
             <input type="number"
                    class="form-control"
                    name="valor"
                    placeholder="Ex: 1000"
-                   min="0"
+                   min="0.01"
                    max="9999999999999999"
                    step="0.01"
                    [(ngModel)]="valInicial"
@@ -25,21 +24,27 @@
                    class="form-control"
                    name="prazo"
                    placeholder="Ex: 12"
-                   min="1"
+                   min="2"
                    max="1200"
+                   step="1"
                    [(ngModel)]="prazoMaximo"
                    required>
           </div>
           <button type="submit"
                   class="btn btn-primary w-100">
-            Calcular
+            Calcular Retornos
           </button>
+
+          <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            {{ errorMessage }}
+            <button type="button" class="btn-close" aria-label="Close" (click)="dismissError()"></button>
+          </div>
         </form>
         <hr class="my-4">
 
         <h4 class="text-center mb-4">Retornos do investimento</h4>
         <div class="mb-3">
-          <label for="retornoBruto" class="form-label">
+          <label for="Bruto" class="form-label">
             Retorno Bruto (R$)
           </label>
           <input type="text"
@@ -50,7 +55,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="retornoLiquido" class="form-label">
+          <label for="Liquido" class="form-label">
             Retorno Líquido (R$)
           </label>
           <input type="text"
