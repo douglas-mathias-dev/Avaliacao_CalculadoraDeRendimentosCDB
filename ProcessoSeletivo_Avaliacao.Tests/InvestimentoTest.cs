@@ -8,11 +8,6 @@ namespace ProcessoSeletivo_Avaliacao.Tests
 {
     public class InvestimentoTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [TestCase(0)]
         [TestCase(-1)]
         [TestCase(-0.01)]
@@ -24,13 +19,17 @@ namespace ProcessoSeletivo_Avaliacao.Tests
                 Prazo = 10
             };
 
-            InvestimentoService service = new InvestimentoService(investimento);
+            InvestimentoService service = new (investimento);
 
             ProblemDetails? resultado = service.ValidarEntrada();
 
-            Assert.IsNotNull(resultado);
-            Assert.That(resultado.Status, Is.EqualTo(400));
-            Assert.That(resultado.Detail, Is.EqualTo("O valor inicial deve ser maior que R$ 0."));
+            
+            Assert.That(resultado, Is.Not.Null);
+            Assert.Multiple(() =>
+            {
+                Assert.That(resultado.Status, Is.EqualTo(400));
+                Assert.That(resultado.Detail, Is.EqualTo("O valor inicial deve ser maior que R$ 0."));
+            });
         }
 
         [TestCase(1000000000000000.0)]
@@ -42,13 +41,16 @@ namespace ProcessoSeletivo_Avaliacao.Tests
                 Prazo = 10
             };
 
-            InvestimentoService service = new InvestimentoService(investimento);
+            InvestimentoService service = new (investimento);
 
             ProblemDetails? resultado = service.ValidarEntrada();
 
-            Assert.IsNotNull(resultado);
-            Assert.That(resultado.Status, Is.EqualTo(400));
-            Assert.That(resultado.Detail, Is.EqualTo("O valor inicial deve ser no maximo R$ 999.999.999.999.999."));
+            Assert.That(resultado, Is.Not.Null);
+            Assert.Multiple(() =>
+            {
+                Assert.That(resultado.Status, Is.EqualTo(400));
+                Assert.That(resultado.Detail, Is.EqualTo("O valor inicial deve ser no maximo R$ 999.999.999.999.999."));
+            });
         }
 
         [TestCase(10)]
@@ -60,11 +62,11 @@ namespace ProcessoSeletivo_Avaliacao.Tests
                 Prazo = 10
             };
 
-            InvestimentoService service = new InvestimentoService(investimento);
+            InvestimentoService service = new (investimento);
 
             ProblemDetails? resultado = service.ValidarEntrada();
 
-            Assert.IsNull(resultado);
+            Assert.That(resultado, Is.Null);
         }
 
         [TestCase(0)]
@@ -78,13 +80,16 @@ namespace ProcessoSeletivo_Avaliacao.Tests
                 Prazo = prazo
             };
 
-            InvestimentoService service = new InvestimentoService(investimento);
+            InvestimentoService service = new (investimento);
 
             ProblemDetails? resultado = service.ValidarEntrada();
 
-            Assert.IsNotNull(resultado);
-            Assert.That(resultado.Status, Is.EqualTo(400));
-            Assert.That(resultado.Detail, Is.EqualTo("O prazo deve ser maior que um mês."));
+            Assert.That(resultado, Is.Not.Null);
+            Assert.Multiple(() =>
+            {
+                Assert.That(resultado.Status, Is.EqualTo(400));
+                Assert.That(resultado.Detail, Is.EqualTo("O prazo deve ser maior que um mês."));
+            });
         }
 
         [TestCase(1201)]
@@ -96,13 +101,16 @@ namespace ProcessoSeletivo_Avaliacao.Tests
                 Prazo = prazo
             };
 
-            InvestimentoService service = new InvestimentoService(investimento);
+            InvestimentoService service = new (investimento);
 
             ProblemDetails? resultado = service.ValidarEntrada();
 
-            Assert.IsNotNull(resultado);
-            Assert.That(resultado.Status, Is.EqualTo(400));
-            Assert.That(resultado.Detail, Is.EqualTo("O prazo deve ser menor que 1200 (Cem Anos)."));
+            Assert.That(resultado, Is.Not.Null);
+            Assert.Multiple(() =>
+            {
+                Assert.That(resultado.Status, Is.EqualTo(400));
+                Assert.That(resultado.Detail, Is.EqualTo("O prazo deve ser menor que 1200 (Cem Anos)."));
+            });
         }
 
         [TestCase(10)]
@@ -114,11 +122,11 @@ namespace ProcessoSeletivo_Avaliacao.Tests
                 Prazo = prazo
             };
 
-            InvestimentoService service = new InvestimentoService(investimento);
+            InvestimentoService service = new (investimento);
 
             ProblemDetails? resultado = service.ValidarEntrada();
 
-            Assert.IsNull(resultado);
+            Assert.That(resultado, Is.Null);
         }
 
         [TestCase(10,6)]
@@ -136,7 +144,7 @@ namespace ProcessoSeletivo_Avaliacao.Tests
 
             decimal retornoLiquidoCorreto = resultado.ValorInicial + ((resultado.RetornoBruto - resultado.ValorInicial) * (1 - 0.225m));
 
-            Assert.IsTrue(retornoLiquidoCorreto.Equals(resultado.RetornoLiquido));
+            Assert.That(retornoLiquidoCorreto, Is.EqualTo(resultado.RetornoLiquido));
         }
 
         [TestCase(10, 12)]
@@ -154,7 +162,7 @@ namespace ProcessoSeletivo_Avaliacao.Tests
 
             decimal retornoLiquidoCorreto = resultado.ValorInicial + ((resultado.RetornoBruto - resultado.ValorInicial) * (1 - 0.2m));
 
-            Assert.IsTrue(retornoLiquidoCorreto.Equals(resultado.RetornoLiquido));
+            Assert.That(retornoLiquidoCorreto, Is.EqualTo(resultado.RetornoLiquido));
         }
 
         [TestCase(10, 24)]
@@ -172,7 +180,7 @@ namespace ProcessoSeletivo_Avaliacao.Tests
 
             decimal retornoLiquidoCorreto = resultado.ValorInicial + ((resultado.RetornoBruto - resultado.ValorInicial) * (1 - 0.175m));
 
-            Assert.IsTrue(retornoLiquidoCorreto.Equals(resultado.RetornoLiquido));
+            Assert.That(retornoLiquidoCorreto, Is.EqualTo(resultado.RetornoLiquido));
         }
 
         [TestCase(10, 120)]
@@ -190,7 +198,7 @@ namespace ProcessoSeletivo_Avaliacao.Tests
 
             decimal retornoLiquidoCorreto = resultado.ValorInicial + ((resultado.RetornoBruto - resultado.ValorInicial) * (1 - 0.15m));
 
-            Assert.IsTrue(retornoLiquidoCorreto.Equals(resultado.RetornoLiquido));
+            Assert.That(retornoLiquidoCorreto, Is.EqualTo(resultado.RetornoLiquido));
         }
 
         [TestCase(10, 3, 0.225)]
@@ -214,8 +222,11 @@ namespace ProcessoSeletivo_Avaliacao.Tests
             decimal retornoBrutoCorreto = valorInicial * DecimalEx.Pow(1 + (0.009m * 1.08m), prazo);
             decimal retornoLiquidoCorreto = valorInicial + ((retornoBrutoCorreto - valorInicial) * (1 - aliquota));
 
-            Assert.IsTrue(retornoBrutoCorreto.Equals(resultado.RetornoBruto));
-            Assert.IsTrue(retornoLiquidoCorreto.Equals(resultado.RetornoLiquido));
+            Assert.Multiple(() =>
+            {
+                Assert.That(retornoBrutoCorreto, Is.EqualTo(resultado.RetornoBruto));
+                Assert.That(retornoLiquidoCorreto, Is.EqualTo(resultado.RetornoLiquido));
+            });
         }
     }
 }
