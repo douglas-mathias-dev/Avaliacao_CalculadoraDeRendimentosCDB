@@ -8,9 +8,15 @@ Projeto de testes unitários para avaliação em processo seletivo executado con
 * .Net 8.0
 * Framework de testes NUnit
 
-## Guia de execução do projeto de testes unitários
+## Guia de execução do projeto de testes unitários via linha de comando
 
-1. Para a execução dos testes, execute o seguinte comando:
+1. Navegue até o diretório do projeto de testes utilizando o terminal:
+
+    ```bash
+    cd ProcessoSeletivo_Avaliacao.Tests\
+    ```
+
+2. Para a execução dos testes, execute o seguinte comando:
 
     ```bash
     dotnet test

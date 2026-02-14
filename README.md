@@ -63,9 +63,11 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
 ## Guia de execução dos projetos via linha de comando
 
 1. Clone o repositório para sua máquina local utilizando o comando:
+
     ```bash
-    git clone
+    git clone https://github.com/douglas-mathias-dev/Avaliacao_CalculadoraDeRendimentosCDB.git
     ```
+
 2. Execute as instruções de execução para cada projeto conforme descrito nos arquivos README.md específicos de cada projeto:
 
     * Para o projeto Angular (Client), siga as instruções em [`ProcessoSeletivo_Avaliacao.Client/README.md`](ProcessoSeletivo_Avaliacao.Client/README.md)
