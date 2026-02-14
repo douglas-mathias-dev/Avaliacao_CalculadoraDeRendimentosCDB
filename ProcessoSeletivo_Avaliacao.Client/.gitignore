@@ -26,9 +26,15 @@ pnpm-debug.log*
 *.tsbuildinfo
 
 # Angular / project generated MSBuild files (when Angular is inside a .NET solution)
+*.user
 /obj/
 /bin/
 /obj/**
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # MSBuild intermediate / generated files
 *.g.props
