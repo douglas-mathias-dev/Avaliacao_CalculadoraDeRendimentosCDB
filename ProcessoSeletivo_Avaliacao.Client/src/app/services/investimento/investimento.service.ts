@@ -17,7 +17,6 @@ export class InvestimentoService {
       prazo: prazo
     };
 
-    
     return this.http.get<RetornoCDB>(this.apiUrl, { params });;
   }
 }

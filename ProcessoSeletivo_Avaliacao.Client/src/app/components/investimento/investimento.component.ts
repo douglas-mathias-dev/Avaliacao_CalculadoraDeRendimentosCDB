@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-investimento',
   templateUrl: './investimento.component.html',
-  styleUrl: './investimento.component.css',
   imports: [FormsModule, CommonModule],
   providers: [
     
@@ -21,7 +20,7 @@ export class InvestimentoComponent {
   retornoLiquido?: number;
 
   errorMessage: string | null = null;
-  constructor(private investimentoService: InvestimentoService) { }
+  constructor(private readonly investimentoService: InvestimentoService) { }
 
   Calcular(form: NgForm) {
     this.errorMessage = null;
