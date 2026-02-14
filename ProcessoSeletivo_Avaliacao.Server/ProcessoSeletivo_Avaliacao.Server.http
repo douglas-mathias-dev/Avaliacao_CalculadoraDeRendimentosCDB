@@ -1,6 +1,6 @@
-@ProcessoSeletivo_Avaliacao.Server_HostAddress = http://localhost:5139
+@ProcessoSeletivo_Avaliacao.Server_HostAddress = https://localhost:7024
 
-GET {{ProcessoSeletivo_Avaliacao.Server_HostAddress}}/weatherforecast/
+GET {{ProcessoSeletivo_Avaliacao.Server_HostAddress}}/CalcularRetornoCDB/
 Accept: application/json
 
 ###

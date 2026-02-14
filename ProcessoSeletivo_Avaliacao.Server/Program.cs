@@ -13,7 +13,10 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy
-                .WithOrigins("http://127.0.0.1:56524")
+                .WithOrigins("http://localhost:56524",
+                    "http://127.0.0.1:56524",
+                    "https://localhost:56524",
+                    "https://127.0.0.1:56524")
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });

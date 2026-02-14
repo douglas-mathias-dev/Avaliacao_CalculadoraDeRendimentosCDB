@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <SpaRoot>..\processoseletivo_avaliacao.client</SpaRoot>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
-    <SpaProxyServerUrl>https://localhost:52618</SpaProxyServerUrl>
+    <SpaProxyServerUrl>https://localhost:56524</SpaProxyServerUrl>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 

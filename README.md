@@ -46,13 +46,28 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
             InvestimentoTest.cs
 ``` 
 
-## Guia de execução dos projetos
+## Guia de execução dos projetos via visual studio
 
-1. Abra e Execute a solução `ProcessoSeletivo_Avaliacao.sln` no Visual Studio 2022 ou compativel com as ferramentas utilizadas.
+1. Clone o repositório para sua máquina local utilizando o comando:
 
-2. O projeto Client (Angular) estará disponível em `http://localhost:56524/` e a API Server (ASP.NET Core) estará em `https://localhost:7024/`.
+    ```bash
+    git clone https://github.com/douglas-mathias-dev/Avaliacao_CalculadoraDeRendimentosCDB.git
+    ```
 
-3. Para executar os testes unitários, utilize o Test Explorer do Visual Studio para rodar os testes contidos no projeto `ProcessoSeletivo_Avaliacao.Tests`.
+2. Abra e Execute a solução `ProcessoSeletivo_Avaliacao.sln` no Visual Studio 2022 ou compativel a solução.
 
-	
+3. O projeto Client (Angular) estará disponível em [`http://localhost:56524/`](http://localhost:56524) e a API Server (ASP.NET Core) estará em [`https://localhost:7024/`](https://localhost:7024/).
 
+4. Para executar os testes unitários, utilize o Test Explorer do Visual Studio para rodar os testes contidos no projeto `ProcessoSeletivo_Avaliacao.Tests`.
+
+## Guia de execução dos projetos via linha de comando
+
+1. Clone o repositório para sua máquina local utilizando o comando:
+    ```bash
+    git clone
+    ```
+2. Execute as instruções de execução para cada projeto conforme descrito nos arquivos README.md específicos de cada projeto:
+
+    * Para o projeto Angular (Client), siga as instruções em [`ProcessoSeletivo_Avaliacao.Client/README.md`](ProcessoSeletivo_Avaliacao.Client/README.md)
+    * Para o projeto ASP.NET Core (Server), siga as instruções em [`ProcessoSeletivo_Avaliacao.Server/README.md`](ProcessoSeletivo_Avaliacao.Server/README.md)
+    * Para os testes unitários, siga as instruções em [`ProcessoSeletivo_Avaliacao.Tests/README.md`](ProcessoSeletivo_Avaliacao.Tests/README.md)
