@@ -2,9 +2,9 @@ namespace ProcessoSeletivo_Avaliacao.Server.Models
 {
     public class Investimento
     {
-        public double ValorInicial { get; set; }
+        public decimal ValorInicial { get; set; }
         public int Prazo { get; set; }
-        public double RetornoLiquido { get; set; }
-        public double RetornoBruto { get; set; }
+        public decimal RetornoLiquido { get; set; }
+        public decimal RetornoBruto { get; set; }
     }
 }

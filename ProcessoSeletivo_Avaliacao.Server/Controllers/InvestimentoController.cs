@@ -9,10 +9,9 @@ namespace ProcessoSeletivo_Avaliacao.Server.Controllers
     public class InvestimentoController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<Investimento> Get(double valorInicial, int prazo)
+        public ActionResult<Investimento> Get(decimal valorInicial, int prazo)
         {
-            InvestimentoService investimentoService = new InvestimentoService
-            (
+            InvestimentoService investimentoService = new (
                 new Investimento()
                 {
                     ValorInicial = valorInicial
@@ -20,8 +19,9 @@ namespace ProcessoSeletivo_Avaliacao.Server.Controllers
                 }
             );
 
-            ProblemDetails erro = investimentoService.ValidarEntrada();
-            if (!string.IsNullOrEmpty(erro.Detail))
+            ProblemDetails? erro = investimentoService.ValidarEntrada();
+            
+            if (erro is not null)
             {
                 return BadRequest(erro);
             }
