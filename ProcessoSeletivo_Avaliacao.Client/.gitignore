@@ -26,7 +26,6 @@ pnpm-debug.log*
 *.tsbuildinfo
 
 # Angular / project generated MSBuild files (when Angular is inside a .NET solution)
-*.esproj
 /obj/
 /bin/
 /obj/**

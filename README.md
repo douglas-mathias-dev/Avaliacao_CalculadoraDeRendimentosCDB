@@ -11,10 +11,10 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
 * Nunit
 * SonarQube Cloud
 
-## Estrutura do projeto `Avaliacao_RetornoCDB`
+## Estrutura do projeto `Avaliacao_CalculadoraDeRendimentosCDB`
 
 ```bash
-\---Avaliacao_RetornoCDB-master
+\---Avaliacao_CalculadoraDeRendimentosCDB-master
     |   ProcessoSeletivo_Avaliacao.sln # Solução do projeto, contendo os projetos Client, Server e Tests
     |
     +---ProcessoSeletivo_Avaliacao.Client # Projeto Angular, responsável pela interface do usuário
