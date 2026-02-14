@@ -1,5 +1,4 @@
-﻿using DecimalMath;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProcessoSeletivo_Avaliacao.Server.Models;
 
 namespace ProcessoSeletivo_Avaliacao.Server.Services
@@ -73,7 +72,11 @@ namespace ProcessoSeletivo_Avaliacao.Server.Services
 
         private void CalcularRetornoBruto()
         {
-            _investimento.RetornoBruto = _investimento.ValorInicial * DecimalEx.Pow(1 + (CDI * TB), _investimento.Prazo);
+            _investimento.RetornoBruto = _investimento.ValorInicial;
+            for (int i = 0; i < _investimento.Prazo; i++)
+            {
+                _investimento.RetornoBruto = _investimento.RetornoBruto * (1 + (CDI * TB));
+            }
         }
 
         private void CalcularRetornoLiquido()
