@@ -15,14 +15,14 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
 
 ```bash
 \---Avaliacao_RetornoCDB-master
-    |   ProcessoSeletivo_Avaliacao.sln // Solução do projeto, contendo os projetos Client, Server e Tests
+    |   ProcessoSeletivo_Avaliacao.sln # Solução do projeto, contendo os projetos Client, Server e Tests
     |
-    +---ProcessoSeletivo_Avaliacao.Client // Projeto Angular, responsável pela interface do usuário
+    +---ProcessoSeletivo_Avaliacao.Client # Projeto Angular, responsável pela interface do usuário
     |   \---src
     |       \---app
     |           \---components
     |           |   \---investimento
-    |           |           investimento.component.html // Template HTML para a interface (UI) de cálculo de rendimentos
+    |           |           investimento.component.html # Template HTML para a interface (UI) de cálculo de rendimentos
     |           |           investimento.component.ts
     |           |
     |           +---models
@@ -30,9 +30,9 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
     |           |
     |           \---services
     |               \---investimento
-    |                       investimento.service.ts // Serviço Angular para comunicação com a API de cálculo de rendimentos
+    |                       investimento.service.ts # Serviço Angular para comunicação com a API de cálculo de rendimentos
     |
-    +---ProcessoSeletivo_Avaliacao.Server // Projeto ASP.NET Core, responsável pela API de cálculo de rendimentos
+    +---ProcessoSeletivo_Avaliacao.Server # Projeto ASP.NET Core, responsável pela API de cálculo de rendimentos
     |   \---Controllers
     |   |       InvestimentoController.cs
     |   |
@@ -40,9 +40,9 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
     |   |       Investimento.cs
     |   |
     |   \---Services
-    |           InvestimentoService.cs // Serviço para cálculo de rendimentos, implementando a lógica de negócio
+    |           InvestimentoService.cs # Serviço para cálculo de rendimentos, implementando a lógica de negócio
     |
-    \---ProcessoSeletivo_Avaliacao.Tests // Projeto de testes unitários utilizando NUnit
+    \---ProcessoSeletivo_Avaliacao.Tests # Projeto de testes unitários utilizando NUnit
             InvestimentoTest.cs
 ``` 
 
