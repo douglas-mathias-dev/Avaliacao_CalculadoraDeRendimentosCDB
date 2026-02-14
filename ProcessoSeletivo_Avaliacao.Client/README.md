@@ -9,7 +9,7 @@ Projeto Angular para avaliação em processo seletivo executado conforme requisi
 
 ## Dependêcias
 
-* API de cálculo de rendimentos (ASP.NET Core) - Projeto `ProcessoSeletivo_Avaliacao.Server` disponível na solução `ProcessoSeletivo_Avaliacao.sln`
+* API de cálculo de rendimentos (ASP.NET Core) - Projeto [`ProcessoSeletivo_Avaliacao.Server`](../ProcessoSeletivo_Avaliacao.Server) disponível na solução `ProcessoSeletivo_Avaliacao.sln`
 
 ## Guia de execução do projeto Angular via linha de comando
 
@@ -19,7 +19,7 @@ Projeto Angular para avaliação em processo seletivo executado conforme requisi
     cd ProcessoSeletivo_Avaliacao.Client\
     ```
 
-1. 2. Baixe as dependencias do projeto Angular utilizando o comando:
+1. 2. Baixe as dependências do projeto Angular utilizando o comando:
 
     ```bash
     npm install

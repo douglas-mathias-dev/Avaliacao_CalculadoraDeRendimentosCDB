@@ -26,7 +26,7 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
     |           |           investimento.component.ts
     |           |
     |           +---models
-    |           |       retorno-cdb.ts // Modelo de dados para o retorno da API de calculo de rendimentos
+    |           |       retorno-cdb.ts // Modelo de dados para o retorno da API de cálculo de rendimentos
     |           |
     |           \---services
     |               \---investimento
@@ -46,7 +46,7 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
             InvestimentoTest.cs
 ``` 
 
-## Guia de execução dos projetos via visual studio
+## Guia de execução dos projetos via Visual Studio
 
 1. Clone o repositório para sua máquina local utilizando o comando:
 
@@ -54,7 +54,7 @@ Projeto para avaliação em processo seletivo executado conforme requisitos propos
     git clone https://github.com/douglas-mathias-dev/Avaliacao_CalculadoraDeRendimentosCDB.git
     ```
 
-2. Abra e Execute a solução `ProcessoSeletivo_Avaliacao.sln` no Visual Studio 2022 ou compativel a solução.
+2. Abra e Execute a solução `ProcessoSeletivo_Avaliacao.sln` no Visual Studio 2022 ou compatível a solução.
 
 3. O projeto Client (Angular) estará disponível em [`http://localhost:56524/`](http://localhost:56524) e a API Server (ASP.NET Core) estará em [`https://localhost:7024/`](https://localhost:7024/).
 
